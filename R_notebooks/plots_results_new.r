@@ -473,12 +473,6 @@ data[data$logp>t1_p_threshold & data$mtb_id %in% t2 ,'Type']='T2 elevated above 
 data[data$mtb_id %in% t2,'Type']='T2 elevated'
 t2_data=data[data$mtb_id %in% t2,]
 
-# data[data$logp>t1_p_threshold & data$mtb_id %in% log_lmm ,'Type']='Lmm reduced above threshold'
-# data[data$mtb_id %in% log_lmm,'Type']='lmm Reduced'
-# t2_data=data[data$mtb_id %in% log_lmm,]
-
-
-
 ggplot(data, aes(x=estimate_level, y=logp)) +
   theme_classic() +
   geom_point(
@@ -495,8 +489,7 @@ scale_color_manual(values=c('grey','#cf1578'))+
     alpha = 5 /6,
     shape = 21
   ) + geom_hline(yintercept=-log10(0.05/7))
-# +
-#   scale_fill_gradient(low = "blue", high = "yellow")
+
 
 # COMMAND ----------
 
